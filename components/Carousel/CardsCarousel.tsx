@@ -1,5 +1,8 @@
 'use client'
 
+import '@mantine/core/styles.css';
+import '@mantine/carousel/styles.css';
+
 import { Carousel } from '@mantine/carousel';
 import { Button, Paper, Text, Title, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
@@ -29,7 +32,7 @@ function Card({ image, title, category }: CardProps) {
         </Title>
       </div>
       <Button variant="white" color="dark">
-        Read article
+        Watch
       </Button>
     </Paper>
   );
@@ -40,7 +43,7 @@ interface CardsCarouselProps {
   animes: CardProps[]
 }
 
-const  CardsCarousel: React.FC<CardsCarouselProps> = ({ animes }) => {
+const CardsCarousel: React.FC<CardsCarouselProps> = ({ animes }) => {
   console.log({ animes })
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
@@ -52,6 +55,7 @@ const  CardsCarousel: React.FC<CardsCarouselProps> = ({ animes }) => {
 
   return (
     <Carousel
+    withIndicators
       slideSize={{ base: '100%', sm: '50%' }}
       slideGap={{ base: 2, sm: 'xl' }}
       align="start"

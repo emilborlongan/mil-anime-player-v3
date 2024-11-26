@@ -3,12 +3,12 @@ import classes from './Welcome.module.css';
 import CardsCarousel from '../Carousel/CardsCarousel';
 
 interface WelcomeProps {
-    data: any;
+  data: any;
 }
 
-export const  Welcome: React.FC<WelcomeProps> = ({ data }) => {
+export const Welcome: React.FC<WelcomeProps> = ({ data }) => {
 
-  console.log('welcome data {0}' , data)
+  console.log('welcome data {0}', data)
 
   return (
     <>
@@ -21,8 +21,7 @@ export const  Welcome: React.FC<WelcomeProps> = ({ data }) => {
       <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
         Simple web player for anime.
       </Text>
-
-      <CardsCarousel animes={data} />
+        <CardsCarousel animes={data} />
     </>
   );
 }

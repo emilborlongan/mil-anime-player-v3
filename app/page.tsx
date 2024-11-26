@@ -4,14 +4,25 @@ import { Welcome } from '../components/Welcome/Welcome';
 import { ANIME } from '@consumet/extensions';
 
 
-export default function HomePage() {
- 
-  
-  
-  
+interface HomepageProps {
+}
+export const HomePage: React.FC<HomepageProps> = async () => {
+
+
+  const animeProvider = new ANIME.Gogoanime();
+  const popularResult = (await animeProvider.fetchPopular()).results.map((animes) => {
+    return { image: animes.image, title: animes.title };
+  });
+
+
+  console.log({ popularResult })
+
   return (
     <>
-      <Welcome />   
+      <Welcome data={popularResult} />
     </>
   );
 }
+
+
+export default HomePage;

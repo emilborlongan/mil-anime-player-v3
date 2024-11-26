@@ -1,7 +1,15 @@
 import { Anchor, Text, Title } from '@mantine/core';
 import classes from './Welcome.module.css';
+import CardsCarousel from '../Carousel/CardsCarousel';
 
-export function Welcome() {
+interface WelcomeProps {
+    data: any;
+}
+
+export const  Welcome: React.FC<WelcomeProps> = ({ data }) => {
+
+  console.log('welcome data {0}' , data)
+
   return (
     <>
       <Title className={classes.title} ta="center" mt={100}>
@@ -13,6 +21,8 @@ export function Welcome() {
       <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
         Simple web player for anime.
       </Text>
+
+      <CardsCarousel animes={data} />
     </>
   );
 }

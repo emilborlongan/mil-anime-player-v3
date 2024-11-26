@@ -19,7 +19,14 @@ const WatchPage: React.FC<WatchPageProps> = async () => {
     const episodes = animeINfo.episodes ?? [1];
     console.log(episodes[0]);
     const firstEpisode = episodes[0]
+
+    const animeINfoservers = await animeProvider.fetchEpisodeSources(firstEpisode.id)
+
+    console.log({animeINfoservers})
+
     const animeINfoEpisodes = await animeProvider.fetchEpisodeSources(firstEpisode.id, StreamingServers.StreamWish)
+
+    console.log({animeINfoEpisodes})
 
     const videoUrlSource = animeINfoEpisodes.sources[2].url
 

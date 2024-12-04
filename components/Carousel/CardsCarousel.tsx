@@ -58,7 +58,6 @@ const CardsCarousel: React.FC<CardsCarouselProps> = ({ animes }) => {
   return (
     <Carousel
       controlSize={40}
-      withIndicators
       slideSize={{ base: '100%', sm: '20%' }}
       slideGap={{ sm: 'xl' }}
       align="start"

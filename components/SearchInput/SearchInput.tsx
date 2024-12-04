@@ -2,19 +2,14 @@
 
 import '@mantine/core/styles.css';
 
-import { Button, Text, TextInput, Center } from '@mantine/core';
+import { Button, TextInput, Center } from '@mantine/core';
 
 
 
-const TopAnimes: React.FC = () => {
+const SearchInput: React.FC = () => {
     return (
         <>
-            <Center style={{ paddingTop: '100px'}}>
-                <Text inherit variant="gradient" component="span" gradient={{ from: 'cyan', to: 'blue' }}>
-                    Searching for specific anime?
-                </Text>
-            </Center>
-            <div style={{ padding: '10px 750px 250px 750px', display: 'flex' }}>
+            <div style={{ display: 'flex' }}>
                 <TextInput
                     size="md"
                     radius="md"
@@ -29,4 +24,4 @@ const TopAnimes: React.FC = () => {
     );
 }
 
-export default TopAnimes;
+export default SearchInput;

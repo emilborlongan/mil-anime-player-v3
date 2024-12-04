@@ -2,7 +2,7 @@ import { Center, Text, Title } from '@mantine/core';
 import classes from './Welcome.module.css';
 import TopAnimes from '../TopAnime/TopAnime';
 import TrendingAnime from '../TrendingAnime/TrendingAnime';
-import HomePageSearchBar from '../HomePageSearchBar/HomePageSearchBar';
+
 
 
 interface WelcomeProps {
@@ -19,7 +19,6 @@ export const Welcome: React.FC<WelcomeProps> = ({ topAiringAnimes, popularAnimes
           Mil-Anime-Player
         </Text>
       </Title>
-      <HomePageSearchBar />
       <Center>
         <TrendingAnime animes={topAiringAnimes} />
       </Center>

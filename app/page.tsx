@@ -24,9 +24,9 @@ export const HomePage: React.FC<HomepageProps> = async () => {
 
   return (
     <>
-      <Welcome 
-      topAiringAnimes={topAiringResult} 
-      popularAnimes={popularResult}
+      <Welcome
+        topAiringAnimes={topAiringResult}
+        popularAnimes={popularResult}
       />
     </>
   );

@@ -1,15 +1,16 @@
-import { Anchor, Text, Title } from '@mantine/core';
+import { Center, Text, Title } from '@mantine/core';
 import classes from './Welcome.module.css';
-import CardsCarousel from '../Carousel/CardsCarousel';
+import TopAnimes from '../TopAnime/TopAnime';
+import TrendingAnime from '../TrendingAnime/TrendingAnime';
+import HomePageSearchBar from '../HomePageSearchBar/HomePageSearchBar';
+
 
 interface WelcomeProps {
-  data: any;
+  topAiringAnimes: any;
+  popularAnimes: any;
 }
 
-export const Welcome: React.FC<WelcomeProps> = ({ data }) => {
-
-  console.log('welcome data {0}', data)
-
+export const Welcome: React.FC<WelcomeProps> = ({ topAiringAnimes, popularAnimes }) => {
   return (
     <>
       <Title className={classes.title} ta="center" mt={100}>
@@ -18,10 +19,14 @@ export const Welcome: React.FC<WelcomeProps> = ({ data }) => {
           Mil-Anime-Player
         </Text>
       </Title>
-      <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
-        Simple web player for anime.
-      </Text>
-        <CardsCarousel animes={data} />
+      <HomePageSearchBar />
+      <Center>
+        <TrendingAnime animes={topAiringAnimes} />
+      </Center>
+
+      <Center>
+        <TopAnimes animes={popularAnimes} />
+      </Center>
     </>
   );
 }

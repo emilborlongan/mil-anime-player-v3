@@ -14,12 +14,20 @@ export const HomePage: React.FC<HomepageProps> = async () => {
     return { image: animes.image, title: animes.title };
   });
 
+  const topAiringResult = (await animeProvider.fetchTopAiring()).results.map((animes) => {
+    return { image: animes.image, title: animes.title };
+  });
+
+
 
   console.log({ popularResult })
 
   return (
     <>
-      <Welcome data={popularResult} />
+      <Welcome 
+      topAiringAnimes={topAiringResult} 
+      popularAnimes={popularResult}
+      />
     </>
   );
 }

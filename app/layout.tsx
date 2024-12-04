@@ -6,8 +6,8 @@ import { theme } from '../theme';
 import { LayoutHeaderFooter } from '../components/Layout/LayoutHeaderFooter'
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'Mil Anime Player',
+  description: 'Non profit anime streaming website!',
 };
 
 export default function RootLayout({ children }: { children: any }) {
